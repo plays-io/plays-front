@@ -1,0 +1,50 @@
+.container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    
+    main {
+        background-color: #ffffff;
+        width: 1050px;
+        min-height: calc(100vh - 20rem);
+        max-height: calc(100vh - 20rem);
+        overflow-y: auto;
+    }
+    
+    .banner1 {
+        width: 160px;
+        margin-right: 20px;
+        min-height: calc(100vh - 20rem);
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        text-align: center;
+    }
+    
+    .banner2 {
+        width: 160px;
+        margin-left: 20px;
+        min-height: calc(100vh - 20rem);
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        text-align: center;
+    }
+
+    .main-contents {
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        height: 562px;
+        margin-top: 5px;
+    }
+}

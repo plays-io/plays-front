@@ -1,0 +1,21 @@
+.smallicon {
+    width: 25px;
+    margin: 5px 0 0 7px;
+
+    :hover {
+        opacity: 0.5;
+    }
+
+    :active {
+        opacity: 1;
+    }
+
+    img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.expand {
+    transform: scale(1.25);
+}

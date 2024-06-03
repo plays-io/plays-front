@@ -8,7 +8,8 @@ const AppHeader = () => {
     return (
         <header className={cx('header')}>
             <div className={cx('logo-wrapper')}>
-                <span className={cx('logo')}></span>
+                <div className={cx('logo')}></div>
+                <div className={cx('welcome')}>안녕하세요</div>
             </div>
         </header>
     )

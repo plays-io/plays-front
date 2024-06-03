@@ -1,0 +1,10 @@
+.main-stage-container {
+    display: flex;
+    flex-flow: row;
+    width: 1050px;
+    height: 562px;
+
+    .main-stage {
+        width: 750px;
+    }
+}

@@ -1,11 +1,14 @@
 import React from "react";
 import Sudoku from "logics/Sudoku";
+import Contents from "components/common/Contents/Contents";
+import MainStage from "components/common/MainStage/MainStage";
+import SudokuBoard from "components/sudoku/SudokuBoard";
 
-const GetInitialBoard = () => {
+const getNewBoard = () => {
     return Sudoku.generate('hard');
 }
 
-const GetCurrentBoard = () => {
+const getCurrentBoard = () => {
     const grids = document.getElementsByClassName('sudoku-grid');
     let board = '';
     [...grids].forEach((grid) => {
@@ -16,9 +19,11 @@ const GetCurrentBoard = () => {
 
 const SudokuPlayPage = () => {
     return (
-        <div>
-            Sudoku
-        </div>
+        <Contents headerVisible={true}>
+            <MainStage>
+                <SudokuBoard/>
+            </MainStage>
+        </Contents>
     )
 }
 
