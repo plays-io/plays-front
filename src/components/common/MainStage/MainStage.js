@@ -2,19 +2,17 @@ import React from 'react';
 import styles from './MainStage.scss';
 import classNames from 'classnames/bind';
 import Categories from "components/common/MainStage/Categories/Categories";
-import Description from "components/common/MainStage/Description/Description";
 
 const cx = classNames.bind(styles);
 
-const MainStage = ({ children }) => {
+const MainStage = ({ children, categories, description }) => {
 
     return (
         <div className={cx('main-stage-container')}>
-            <Categories/>
+            <Categories items={categories}/>
             <div className={cx('main-stage')}>
                 {children}
             </div>
-            <Description width={495}/>
         </div>
     )
 }

@@ -4,6 +4,8 @@ import Contents from "components/common/Contents/Contents";
 import MainStage from "components/common/MainStage/MainStage";
 import SudokuBoard from "components/sudoku/SudokuBoard";
 
+const difficulty = ['Easy', 'Medium', 'Hard', 'Very hard', 'Impossible'];
+
 const getNewBoard = () => {
     return Sudoku.generate('hard');
 }
@@ -20,7 +22,7 @@ const getCurrentBoard = () => {
 const SudokuPlayPage = () => {
     return (
         <Contents headerVisible={true}>
-            <MainStage>
+            <MainStage categories={difficulty}>
                 <SudokuBoard/>
             </MainStage>
         </Contents>

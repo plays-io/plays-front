@@ -4,14 +4,12 @@ import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
 
-const difficulty = ['Easy', 'Medium', 'Hard', 'Very hard', 'Impossible'];
-
 const setDifficulty = (index) => {
     console.log(index);
 }
 
-const Categories = ({ children, width }) => {
-    const listItems = difficulty.map((element, index) => (
+const Categories = ({ items, width }) => {
+    const listItems = items.map((element, index) => (
         <li className={cx('list-group-item list-group-item-action')} 
             key={index}
             onClick={setDifficulty}
