@@ -1,6 +1,5 @@
 .container-fluid {
     display: flex;
-    align-items: center;
     justify-content: center;
     ::-webkit-scrollbar {
         display: none;
@@ -12,15 +11,15 @@
     main {
         background-color: #ffffff;
         width: 1050px;
-        min-height: calc(100vh - 20rem);
-        max-height: calc(100vh - 20rem);
+        min-height: 600px;
+        max-height: 600px;
         overflow-y: auto;
     }
     
     .banner1 {
         width: 160px;
         margin-right: 20px;
-        min-height: calc(100vh - 20rem);
+        min-height: 562px;
         img {
             max-width: 100%;
             height: auto;
@@ -31,7 +30,7 @@
     .banner2 {
         width: 160px;
         margin-left: 20px;
-        min-height: calc(100vh - 20rem);
+        min-height: 562px;
         img {
             max-width: 100%;
             height: auto;
@@ -44,7 +43,7 @@
         flex-flow: column;
         align-items: flex-start;
         justify-content: flex-start;
-        height: 562px;
+        height: 555px;
         margin-top: 5px;
     }
 }

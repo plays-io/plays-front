@@ -14,7 +14,7 @@ const MainStage = ({ children }) => {
             <div className={cx('main-stage')}>
                 {children}
             </div>
-            <Description width={475}/>
+            <Description width={495}/>
         </div>
     )
 }
