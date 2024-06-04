@@ -4,6 +4,14 @@
     background-color: rgb(59, 49, 64);
     margin-left: 5px;
 
+    .sudoku-info {
+        border: 2px solid rgb(59, 49, 64);
+        background-color: rgb(255, 255, 255);
+        text-align: center;
+        line-height: 552px;
+        height: 552px;
+    }
+
     .sudoku-wrap div:nth-child(-n+8) {
         margin: 3px 0px 0px 3px;
     }

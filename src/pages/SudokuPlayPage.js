@@ -1,29 +1,49 @@
-import React from "react";
-import Sudoku from "logics/Sudoku";
+import React, {useState} from "react";
 import Contents from "components/common/Contents/Contents";
 import MainStage from "components/common/MainStage/MainStage";
 import SudokuBoard from "components/sudoku/SudokuBoard";
+import Flatbutton from "components/common/Buttons/FlatButton/FlatButton";
 
-const difficulty = ['Easy', 'Medium', 'Hard', 'Very hard', 'Impossible'];
+const difficulty = ['Easy', 'Medium', 'Hard', 'Very hard', 'Insane', 'Inhuman'];
 
-const getNewBoard = () => {
-    return Sudoku.generate('hard');
-}
-
-const getCurrentBoard = () => {
-    const grids = document.getElementsByClassName('sudoku-grid');
-    let board = '';
-    [...grids].forEach((grid) => {
-        board += grid.innerHTML === '' ? '.' : grid.innerHTML;
-    })
-    return board;
+const setSudokuNumber = (number) => {
+    console.log(number)
 }
 
 const SudokuPlayPage = () => {
+    const [selectedDifficulty, setSelectedDifficulty] = useState(null);
+
+    const Description = () => {
+        return (
+            <>
+                <div className={('button-row')}>
+                    <Flatbutton onClick={() => setSudokuNumber(1)}>1</Flatbutton>
+                    <Flatbutton onClick={() => setSudokuNumber(2)}>2</Flatbutton>
+                    <Flatbutton onClick={() => setSudokuNumber(3)}>3</Flatbutton>
+                </div>
+                <div className={('button-row')}>
+                    <Flatbutton onClick={() => setSudokuNumber(4)}>4</Flatbutton>
+                    <Flatbutton onClick={() => setSudokuNumber(5)}>5</Flatbutton>
+                    <Flatbutton onClick={() => setSudokuNumber(6)}>6</Flatbutton>
+                </div>
+                <div className={('button-row')}>
+                    <Flatbutton onClick={() => setSudokuNumber(7)}>7</Flatbutton>
+                    <Flatbutton onClick={() => setSudokuNumber(8)}>8</Flatbutton>
+                    <Flatbutton onClick={() => setSudokuNumber(9)}>9</Flatbutton>
+                </div>
+            </>
+        )
+    }
+
     return (
         <Contents headerVisible={true}>
-            <MainStage categories={difficulty}>
-                <SudokuBoard/>
+            <MainStage 
+                width={520} 
+                categories={difficulty}
+                descChildren={<Description/>}
+                setDifficulty={setSelectedDifficulty}
+            >
+                <SudokuBoard selectedDifficulty={selectedDifficulty}/>
             </MainStage>
         </Contents>
     )

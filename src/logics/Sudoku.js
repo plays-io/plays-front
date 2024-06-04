@@ -25,12 +25,12 @@ var NR_SQUARES = 81;            // Number of squares
 // Define difficulties by how many squares are given to the player in a new
 // puzzle.
 var DIFFICULTY = {
-    "easy":         61,
-    "medium":       52,
-    "hard":         43,
-    "very-hard":    34,
-    "insane":       25,
-    "inhuman":      17
+    "Easy":         61,
+    "Medium":       52,
+    "Hard":         43,
+    "Very hard":    34,
+    "Insane":       25,
+    "Inhuman":      17
 };
 
 // Blank character and board representation

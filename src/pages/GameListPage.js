@@ -1,5 +1,5 @@
 import React from "react";
-import WideButton from "components/common/WideButton/WideButton";
+import WideButton from "components/common/Buttons/WideButton/WideButton";
 import Contents from "components/common/Contents/Contents";
 import SudokuLogo from "assets/sudoku.png";
 import NonogramLogo from "assets/nonogram.jpg";
