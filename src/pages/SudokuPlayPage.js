@@ -3,6 +3,7 @@ import Contents from "components/common/Contents/Contents";
 import MainStage from "components/common/MainStage/MainStage";
 import SudokuBoard from "components/sudoku/SudokuBoard";
 import Flatbutton from "components/common/Buttons/FlatButton/FlatButton";
+import Counter from "components/common/Counter/Counter";
 
 const difficulty = ['Easy', 'Medium', 'Hard', 'Very hard', 'Insane', 'Inhuman'];
 
@@ -42,6 +43,7 @@ const SudokuPlayPage = () => {
                 categories={difficulty}
                 descChildren={<Description/>}
                 setDifficulty={setSelectedDifficulty}
+                counter={<Counter/>}
             >
                 <SudokuBoard selectedDifficulty={selectedDifficulty}/>
             </MainStage>

@@ -6,7 +6,7 @@ import Description from "components/common/MainStage/Description/Description";
 
 const cx = classNames.bind(styles);
 
-const MainStage = ({ width, children, categories, description, descChildren, setDifficulty }) => {
+const MainStage = ({ width, children, categories, description, descChildren, setDifficulty, counter }) => {
 
     return (
         <div className={cx('main-stage-container')}>
@@ -14,7 +14,7 @@ const MainStage = ({ width, children, categories, description, descChildren, set
             <div className={cx('main-stage')} style={{width: width}}>
                 {children}
             </div>
-            <Description items={description} children={descChildren}/>
+            <Description items={description} children={descChildren} counter={counter}/>
         </div>
     )
 }

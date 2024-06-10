@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useMemo, useState } from "react";
 import Sudoku from "logics/Sudoku";
 import styles from './SudokuBoard.scss';
 import classNames from 'classnames/bind';
@@ -23,14 +23,27 @@ const getCurrentBoard = () => {
     return board;
 }
 
+const SudokuBoardItem = ({number, row, col, focused, onClick}) => {
+    console.log(onClick)
+    const event = onClick;
+    console.log(event.prev)
 
+    let state;
+    if (focused.length === 0) {
+        state = true
+    } else {
+        if (focused[0] === row && focused[1] === col) {
+            state = true
+        } else {
+            state = false
+        }
+    }
 
-const SudokuBoardItem = ({number, onClick, state}) => {
     return (
         <div
             className={`sudoku-grid ${number === '.' ? 'mutable' : 'immutable'}`}
             onClick={onClick}
-            style={state ? { opacity:1 } : { opacity:0.75 }}
+            style={state ? { opacity: 1 } : { opacity: 0.75 }}
         >
             {number !== '.' ? number : ''}
         </div>
@@ -39,36 +52,24 @@ const SudokuBoardItem = ({number, onClick, state}) => {
 
 const SudokuBoard = ({ selectedDifficulty }) => {
     const [focused, setFocused] = useState([]);
-    const [board, setBoard] = useState([]);
 
-    useEffect(() => {
-        setBoard(getNewBoard(selectedDifficulty));
-    }, [selectedDifficulty])
+    const board = useMemo(() => getNewBoard(selectedDifficulty), [selectedDifficulty])
 
     return (
         selectedDifficulty !== null ? (
             <div className={cx('d-flex justify-content-center sudoku-container')}>
                 {board.map((row, rowIndex) => (
                     <div key={rowIndex} className="d-flex sudoku-wrap">
-                        {row.map((number, colIndex) => {
-                            let state;
-                            if (focused.length == 0) {
-                                state = true
-                            } else {
-                                if (focused[0] == rowIndex && focused[1] == colIndex) {
-                                    state = true
-                                } else {
-                                    state = false
-                                }
-                            }
-                            
-                            return <SudokuBoardItem 
+                        {row.map((number, colIndex) => (
+                            <SudokuBoardItem 
                                 key={colIndex} 
                                 number={number} 
+                                row={rowIndex}
+                                col={colIndex}
+                                focused={focused}
                                 onClick={() => setFocused([rowIndex, colIndex])}
-                                state={state}
                             />
-                        })}
+                        ))}
                     </div>
                 ))}
             </div>

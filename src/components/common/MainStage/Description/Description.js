@@ -4,12 +4,15 @@ import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
 
-const Description = ({ children, items }) => {
+const Description = ({ children, items, counter }) => {
 
     return (
+        <>
         <div className={cx('description-container')}>
             {children}
+            {counter}
         </div>
+        </>
     )
 }
 

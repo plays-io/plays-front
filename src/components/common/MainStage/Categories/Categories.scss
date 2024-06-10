@@ -7,6 +7,11 @@
     .list-group {
         width: 220px;
         margin-right:5px;
+
+        .list-group-item {
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
     }
 }
 

@@ -2,7 +2,7 @@
     width: 522px;
     flex-flow: column;
     background-color: rgb(59, 49, 64);
-    margin-left: 5px;
+    margin-left: 10px;
 
     .sudoku-info {
         border: 2px solid rgb(59, 49, 64);
@@ -39,11 +39,11 @@
 
     .sudoku-grid {
         background-color: rgb(255, 247, 237);
-        width: 58px;
-        height: 58px;
-        font-size: 36px;
+        width: 57px;
+        height: 57px;
+        font-size: 40px;
         text-align: center;
-        line-height: 58px;
+        line-height: 57px;
     
         .mutable {
             color: rgb(63, 127, 255);
